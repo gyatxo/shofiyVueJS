@@ -5,7 +5,8 @@ interface Product {
     price: string,
     image: string,
     stock: number,
-    category: Array
+    category: Array,
+    productCount: number
 }
 
 export default Product;
