@@ -11,8 +11,9 @@
                 <h1 class="self-start">{{item.name}}</h1>
                 <h1>{{item.price}}</h1>
             </div>
+            <span class="hidden">{{total += item.price * item.productCount}}</span>
             <div class="flex-col justify-around align-around">
-                <h1>count</h1>
+                <h1>{{item.productCount}}</h1>
                 <button @click="removeCart(item.id)" class="border border-black py-1 px-3 mb-2 rounded-md bg-green-500 text-white text-bold">remove</button>
             </div>
         </div>
@@ -20,8 +21,10 @@
         <div v-else>
             <h1>NO ITEMS IN THE CART</h1>
         </div>
-        <p class="p-5">Total Amount</p>
+        <p class="p-5">Total Amount: {{total}} </p>
+        <div class="mb-4">
         <router-link to="/checkout" class="border border-black py-1 px-3 mb-2 rounded-md bg-green-500 text-white text-bold">CheckOut</router-link>
+        </div>
     </div>
 </div>
 </template>
@@ -32,6 +35,11 @@ import { mapActions, mapGetters } from "vuex";
 
 export default defineComponent({
     name: 'Cart',
+    data() {
+        return {
+            total: 0,
+        }
+    },
     computed: {
         ...mapGetters(['userItem']),
     },

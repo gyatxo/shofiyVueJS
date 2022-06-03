@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Cart from "../components/Cart.vue";
 import CheckOut from "../components/CheckOut.vue";
+import Filter from "../components/Filter.vue";
 import ProductDetails from "../components/ProductDetails.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -10,12 +11,6 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "Home",
     component: Home,
-  },
-  {
-    path: "/about",
-    name: "About",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
     path: "/cart",
@@ -33,9 +28,14 @@ const routes: Array<RouteRecordRaw> = [
     component: CheckOut,
   },
   {
-    path: "/productdetails",
+    path: "/productdetails/:id",
     name: "ProductDetails",
     component: ProductDetails,
+  },
+  {
+    path: "/filter",
+    name: "Filter",
+    component: Filter,
   },
 ];
 

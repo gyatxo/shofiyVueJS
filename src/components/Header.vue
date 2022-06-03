@@ -7,7 +7,7 @@
       </div>
       <div class="flex justify-around w-1/6">
         <router-link to="/" class="">Home</router-link> 
-        <router-link to="/cart"><i class="fas fa-cart-plus"><sup class="pl-3">{{getCount}}</sup></i></router-link> 
+        <router-link to="/cart"><i class="fas fa-cart-plus"><sup class="ml-3 py-1 px-2  rounded-full bg-green-500 text-white">{{getCount}}</sup></i></router-link> 
         <router-link to="/login"><i class="fas fa-user"></i></router-link>
       </div>
     </nav>
@@ -36,7 +36,7 @@ nav a {
   color: white;
 }
 
-nav a.router-link-exact-active, i {
+nav a.router-link-exact-active,nav a.router-link-exact-active i {
   color: #42b983;
 }
 

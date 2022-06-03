@@ -25,7 +25,9 @@
             
             
             <div class="flex justify-around p-3 w-full">
-                <input class="border border-black py-1 px-3 mb-2 rounded-md bg-green-500 text-white text-bold" type="submit" name="submit" value="submit">
+            <router-link to="/">
+                <input type="button" class="border border-black py-1 px-3 mb-2 rounded-md bg-green-500 text-white text-bold" value="submit"  name="submit">
+            </router-link>
                 <input class="border border-black py-1 px-3 mb-2 rounded-md bg-green-500 text-white text-bold" type="reset" name="reset" value="reset">
             </div>
         </form>
@@ -34,7 +36,7 @@
 
 <script>
 export default {
-
+    name: 'CheckOut'
 }
 </script>
 
