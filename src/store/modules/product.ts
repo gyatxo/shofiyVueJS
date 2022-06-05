@@ -4,7 +4,8 @@ const state= {
         userItem: [],
         filterProductList: [],
         filteredProductList: [],
-        total: 0
+        total: 0,
+        productDetail: []
 }
 const  getters= {
     allProducts: state => state.productList,
@@ -12,6 +13,7 @@ const  getters= {
     userItem: state => state.userItem,
     filteredProductList: state => state.filteredProductList,
     total: state => state.total,
+    productDetail: state => state.productDetail,
 }
 const  actions= {
     async getProducts ({ commit }){
@@ -35,7 +37,10 @@ const  actions= {
         commit('filterProduct', payload)
     },
     totalAmt ({commit},payload){
-        commit('totalAmt',payload);
+        commit('totalAmt', payload);
+    },
+    getProduct ({commit}, id:string){
+        commit('getProduct', id);
     }
 }
 
@@ -93,6 +98,11 @@ const  mutations= {
         let prc = parseInt(''+ item.price.slice(1,item.price.length));
         state.total += prc * item.productCount;
         console.log(state.total,prc, item.productCount,'total')
+    },
+    getProduct (state, productId:string){
+        let id = parseInt(''+productId);
+        state.productDetail = state.productList.filter((prd)=> prd.id === id);
+        console.log(state.productDetail);
     }
 }
 export default {
