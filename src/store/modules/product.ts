@@ -8,7 +8,8 @@ const state= {
 const  getters= {
     allProducts: state => state.productList,
     getCount: state => state.itemCount,
-    userItem: state => state.userItem
+    userItem: state => state.userItem,
+    filteredProductList: state => state.filteredProductList,
 }
 const  actions= {
     async getProducts ({ commit }){
@@ -27,9 +28,9 @@ const  actions= {
     // filterProduct ({commit}, minValue, maxValue, cat) {
     //     commit('filterProduct', minValue, maxValue, cat);
     // }
-    test ({commit}, payload){
+    filterProduct ({commit}, payload){
         // console.log(payload)
-        commit('test', payload)
+        commit('filterProduct', payload)
     }
 }
 
@@ -72,21 +73,15 @@ const  mutations= {
     //     }
     //     console.log(state.filteredProductList);
     // },
-    test (state,payload) {
-        // alert('test was clicked')
-        if(payload.cat !== '' && payload.minValue !== 0 && payload.maxValue !== 0){
-            // alert('if is running')
-            // console.log(payload)
-            state.filteredProductList =state.filterProductList.filter((prd)=> (prd.price >= payload.minValue && prd.price) <= payload.maxValue && prd.category[1] === payload.cat )
-            console.log(state.filteredProductList)
+    filterProduct (state,payload) {
+        if(payload.cat !== '' && payload.minValue !== '' && payload.maxValue !== ''){
+            state.filteredProductList =state.filterProductList.filter((prd)=> (parseInt(''+prd.price.slice(1,prd.price.length)) >= parseInt('' + payload.minValue) && parseInt(''+prd.price.slice(1,prd.price.length))) <= parseInt(''+payload.maxValue) && prd.category[1] === payload.cat );
         }
         else if (payload.cat && payload.cat !== 'all'){
-            alert('else if was running')
             state.filteredProductList = state.filterProductList.filter((prd)=> prd.category[1] === payload.cat)
-            console.log(state.filteredProductList)
         }
         else if(payload.cat === 'all'){
-            alert('all')
+            state.filteredProductList = state.productList;
         }
     }
 }
