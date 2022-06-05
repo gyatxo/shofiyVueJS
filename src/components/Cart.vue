@@ -11,7 +11,7 @@
                 <h1 class="self-start">{{item.name}}</h1>
                 <h1>{{item.price}}</h1>
             </div>
-            <span class="hidden">{{total += item.price * item.productCount}}</span>
+            <span class="hidden">{{totalAmt(item)}}</span>
             <div class="flex-col justify-around align-around">
                 <h1>{{item.productCount}}</h1>
                 <button @click="removeCart(item.id)" class="border border-black py-1 px-3 mb-2 rounded-md bg-green-500 text-white text-bold">remove</button>
@@ -35,16 +35,11 @@ import { mapActions, mapGetters } from "vuex";
 
 export default defineComponent({
     name: 'Cart',
-    data() {
-        return {
-            total: 0,
-        }
-    },
     computed: {
-        ...mapGetters(['userItem']),
+        ...mapGetters(['userItem','total']),
     },
     methods: {
-        ...mapActions(['removeCart']),
+        ...mapActions(['removeCart','totalAmt']),
     }
 })
 </script>
