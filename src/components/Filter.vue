@@ -1,6 +1,6 @@
 <template>
-  <div >
-    <form class="flex-col align-between h-96 justify-between w-1/3 border border-black p-2 mt-5 ml-96">
+  <div class="container md:mx-auto px-5 lg:w-1/3 flex-col align-center justify-center">
+    <form class="flex-col  lg:w-full align-between h-96 justify-between border border-black p-2 mt-5 ">
     <div>
         <h1 class="bg-green-500 my-5 py-2">Filter</h1>
         <label for="price">Price</label>
@@ -25,11 +25,12 @@
         <button class="border border-black py-1 px-3 mb-2 rounded-md bg-green-500 text-white text-bold ml-2" @click.prevent="filterProduct({minValue,maxValue,cat})" >Apply</button>
     </div>
     </form>
+    </div>
     <div v-if="filteredProductList.length > 0">
     <Product  :products="filteredProductList"/>
     </div>
     <!-- <div v-else>hello</div> -->
-  </div>
+  
 </template>
 
 <script>

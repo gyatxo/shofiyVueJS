@@ -1,11 +1,11 @@
 <template>
   <div>
     <div>
-    <nav class="flex justify-between bg-gray-700">
+    <nav class="flex justify-around lg:justify-between bg-gray-700">
       <div>
-        <router-link to="/" class="uppercase text-bold text-2xl italic">Shopify</router-link> 
+        <router-link to="/" class="uppercase text-bold text-2xl italic lg:pl-5">Shopify</router-link> 
       </div>
-      <div class="flex justify-around w-1/6">
+      <div class="flex justify-around w-1/2 lg:w-1/6 pr-5">
         <router-link to="/" class="">Home</router-link> 
         <router-link to="/cart"><i class="fas fa-cart-plus"><sup class="ml-3 py-1 px-2  rounded-full bg-green-500 text-white">{{getCount}}</sup></i></router-link> 
         <router-link to="/login"><i class="fas fa-user"></i></router-link>

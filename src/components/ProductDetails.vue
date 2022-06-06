@@ -1,7 +1,7 @@
 <template>
-<div class="container mx-auto w-1/3 mt-5 ">
+<div class="container lg:mx-auto lg:w-1/3 px-5 mt-5 ">
     <div v-for="product in productDetail" :key="product.id" class="w-fit h-fit border border-black flex-col justify-center p-5">
-      <div class="w-80 h-fit mx-auto ">
+      <div class="w-52 sm:w-80 h-fit mx-auto ">
         <img :src="`https://electronic-ecommerce.herokuapp.com/${product.image}`"  alt="Image of the Product">
       </div>
       <h1 class="py-5 text-2xl text-green-600 font-bold">Name of the product {{product.name}}</h1>

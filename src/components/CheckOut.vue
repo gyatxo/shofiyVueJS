@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <form  class="flex w-1/2 flex-col m-5 h-fit justify-center align-center border border-black p-2 " >
+  <div class="lg:container lg:mx-auto lg:w-1/2">
+    <form  class="flex-col m-5 h-fit justify-center align-center border border-black p-2 " >
             <h1 class="self-center uppercase pb-5">Billing Details</h1>
             <div class="flex justify-between p-3 w-full">
                 <label class="p-2" for="name"> Name :</label>
@@ -9,17 +9,17 @@
             
             <div class="flex justify-between p-3 w-full">
                 <label class="p-2" for="email"> Email :</label>
-                <input class="border border-solid border-gray-300 w-1/2 rounded-md p-2" type="email" name="email" placeholder="Enter Email">
+                <input class="border border-solid border-gray-300 lg:w-1/2 rounded-md p-2" type="email" name="email" placeholder="Enter Email">
             </div>
             
             <div class="flex justify-between p-3 w-full">
                 <label class="p-2" for="phone"> Phone :</label>
-                <input class="border border-solid border-gray-300 w-1/2 rounded-md p-2" type="number" name="phone" placeholder="Enter Phone Number">
+                <input class="border border-solid border-gray-300 lg:w-1/2 rounded-md p-2" type="number" name="phone" placeholder="Enter Phone Number">
             </div>
             
             <div class="flex justify-between p-3 w-full">
                 <label class="p-2" for="address">Permanent Address :</label>
-                <input class="border border-solid border-gray-300 w-1/2 rounded-md p-2" type="text" name="address" placeholder="Enter Address">
+                <input class="border border-solid border-gray-300 lg:w-1/2 rounded-md p-2" type="text" name="address" placeholder="Enter Address">
             </div>
             
             

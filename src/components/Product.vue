@@ -1,8 +1,8 @@
 <template>
-    <div class="flex justify-between border border-black mt-10 p-5 mx-12 shadow drop-shadow-xl rounded-t-lg bg-green-500">
-        <h1 class="text-bold text-white text-2xl">PROODUCTS</h1>
-        <router-link to="/filter" class="border border-black bg-gray-700 px-2 rounded-md">
-            <i class="fa fa-filter text-green-500 text-md text-center"><span> FILTER</span></i>
+    <div class="flex-col sm:flex justify-between border border-black mt-10 p-5 mx-12 shadow drop-shadow-xl rounded-t-lg bg-green-500">
+        <h1 class="text-bold text-white text-md sm:text-2xl">PROODUCTS</h1>
+        <router-link to="/filter" class="border border-black bg-white px-1 sm:px-2 rounded-md">
+            <i class="fa fa-filter text-green-500 text-sm sm:text-md text-center"><span> FILTER</span></i>
         </router-link>
     </div>
     <div class="flex justify-around align-center pt-5 flex-wrap" >
