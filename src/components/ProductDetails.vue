@@ -22,7 +22,7 @@ import CartBtn from "./CartBtn.vue";
 
 export default {
     name: 'ProductDetails',
-    data() {
+    data () {
       return {
         id: this.$route.params.id,
       }
